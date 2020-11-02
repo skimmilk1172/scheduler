@@ -1,6 +1,7 @@
 import React from "react";
-import InterviewerListItem from "components/InterviewerListItem";
+import "components/InterviewerList.scss";
 import 'components/InterviewerList.scss';
+import InterviewerListItem from "components/InterviewerListItem";
 const classnames = require("classnames");
 
 export default function InterviewerList(props) {
@@ -12,12 +13,14 @@ export default function InterviewerList(props) {
   const interviewers = props.interviewers.map(interviewer => {
     return (
       <InterviewerListItem
+      className={interviewerClass}
         key={interviewer.id}
         name={interviewer.name}
         avatar={interviewer.avatar}
+        id={interviewer.id}
         selected={interviewer.id === props.interviewer}
         setInterviewer={event => props.setInterviewer(interviewer.id)}
-      />
+      ></InterviewerListItem>
     );
   });
   return (
