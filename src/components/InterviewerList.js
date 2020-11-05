@@ -1,10 +1,14 @@
 import React from "react";
-import "components/InterviewerList.scss";
 import 'components/InterviewerList.scss';
 import InterviewerListItem from "components/InterviewerListItem";
+import PropTypes from 'prop-types';
 const classnames = require("classnames");
 
 export default function InterviewerList(props) {
+  InterviewerList.propTypes = {
+    interviewer: PropTypes.number,
+    setInterviewer: PropTypes.func.isRequired 
+  };
   const interviewerClass = classnames("", props.className, {
     interviewers__header: props.header,
     interviewers__list: props.list
