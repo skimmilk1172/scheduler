@@ -21,3 +21,9 @@ npm test
 ```sh
 npm run storybook
 ```
+
+!["Screenshot of the landing page of Scheduler"](https://github.com/skimmilk1172/scheduler/blob/master/docs/home.png?raw=true)
+
+!["Screenshot of Delete button"](https://github.com/skimmilk1172/scheduler/blob/master/docs/delete.png?raw=true)
+
+!["Screenshot of loading logo while deleting"](https://github.com/skimmilk1172/scheduler/blob/master/docs/load.png?raw=true)
