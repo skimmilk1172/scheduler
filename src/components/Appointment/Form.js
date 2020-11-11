@@ -4,6 +4,9 @@ import InterviewerList from "../InterviewerList";
 import Button from "../Button";
 
 export default function Form(props) {
+
+  // Create, props.name ='' and props.interviewer = null;
+  // Edit, props.name and props.interviewer won't be empty
   const [name, setName] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");

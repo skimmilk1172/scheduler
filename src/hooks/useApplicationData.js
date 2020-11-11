@@ -68,7 +68,7 @@ export function useApplicationData() {
       }
     });
   });
-
+    //Initial state
   useEffect(() => {
     Promise.all([
       axios.get(`/api/days`),

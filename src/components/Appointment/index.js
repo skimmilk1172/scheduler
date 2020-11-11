@@ -28,6 +28,8 @@ export default function Appointment(props) {
       interviewer
     };
     transition(SAVING);
+
+    //This will return a promise
     props
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
@@ -35,6 +37,7 @@ export default function Appointment(props) {
   }
   function delete1() {
     transition(DELETE, true);
+    //This will return a promise
     props
       .deleteInterview(props.id)
       .then(() => transition(EMPTY))
@@ -62,6 +65,7 @@ export default function Appointment(props) {
           onDelete={() => transition(CONFIRM)}
         />
       )}
+      {/* Creating form */}
       {mode === CREATE && (
         <Form
           interviewers={props.interviewers}
@@ -69,6 +73,7 @@ export default function Appointment(props) {
           onCancel={() => back()}
         />
       )}
+      {/* Saving and Confirming message, and delete confirm message */}
       {mode === SAVING && <Status message="Saving..."></Status>}
       {mode === CONFIRM && (
         <Confirm
@@ -77,6 +82,7 @@ export default function Appointment(props) {
           onCancel={() => back()}
         ></Confirm>
       )}
+      {/* Deleting Status  */}
       {mode === DELETE && <Status message="Deleting..."></Status>}
       {mode === EDIT && (
         <Form
@@ -87,6 +93,7 @@ export default function Appointment(props) {
           onCancel={() => back()}
         />
       )}
+      {/* Error Message for booking error and deleting error */}
       {mode === ERROR_SAVE && (
         <Error
           message="Unable to book appointment, please try again later."

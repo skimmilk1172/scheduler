@@ -89,5 +89,5 @@ describe("Application", () => {
   });
   it("shows the delete error when failing to delete an existing appointment", () => {
     axios.delete.mockRejectedValueOnce();
-  });
+  });  
 });
